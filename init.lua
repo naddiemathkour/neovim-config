@@ -171,7 +171,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -254,7 +254,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -350,7 +350,7 @@ require('lazy').setup({
       },
     },
   },
-  { 'Bilal2453/luvit-meta',     lazy = true },
+  { 'Bilal2453/luvit-meta', lazy = true },
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -362,7 +362,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -515,10 +515,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},  -- C
-        gopls = {},   -- Go
+        clangd = {}, -- C
+        gopls = {}, -- Go
         pyright = {}, -- Python
-        ts_ls = {},   -- TS
+        ts_ls = {}, -- TS
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -905,5 +905,12 @@ vim.api.nvim_create_user_command('JumpUp', function(opts)
   local lines = tonumber(opts.args) or 0
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(tostring(lines) .. 'k', true, false, true), 'n', true)
 end, { nargs = 1, complete = 'customlist,v:lua.vim.fn.getline' })
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+
+-- [Tabbing/Spacing]
+vim.opt.tabstop = 2 -- Number of spaces that a <Tab> counts for
+vim.opt.shiftwidth = 2 -- Number of spaces used for autoindent
+vim.opt.softtabstop = 2 -- Number of spaces for <Tab> in insert mode
+vim.opt.expandtab = true -- Convert tabs to spaces
+
+-- [Color Column]
+vim.opt.colorcolumn = '80'
