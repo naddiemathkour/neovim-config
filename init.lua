@@ -82,10 +82,10 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', 'wh', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', 'wl', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', 'wj', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', 'wk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<S-w>h', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<S-w>l', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<S-w>j', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<S-w>k', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- NeoTree
 -- vim.api.nvim_set_keymap('n', '<c-t>', ':Neotree<CR>', { noremap = true, silent = true })
@@ -889,7 +889,7 @@ vim.api.nvim_set_keymap('n', 'tl', ':tabnext<CR>', { noremap = true, silent = tr
 vim.api.nvim_set_keymap('n', 'th', ':tabprevious<CR>', { noremap = true, silent = true })
 
 -- windows
-vim.api.nvim_set_keymap('n', 'wn', ':vs | Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-w>n', ':vs | Telescope find_files<CR>', { noremap = true, silent = true })
 
 -- Terminal
 vim.api.nvim_set_keymap('n', '<Leader>t', ':sp<CR>:term<CR>', { noremap = true, silent = true })
