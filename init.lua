@@ -562,6 +562,10 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+
+        ensure_installed = {}, -- List of LSPs to ensure are installed
+        automatic_installation = true, -- Automatically install missing LSPs
+
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -918,3 +922,6 @@ vim.opt.expandtab = true -- Convert tabs to spaces
 
 -- [Color Column]
 vim.opt.colorcolumn = '80'
+
+-- [Errors]
+vim.api.nvim_set_keymap('n', '<Leader>e', [[:lua if vim.diagnostic.get(0) then vim.diagnostic.open_float() end<CR>]], { noremap = true, silent = true })
