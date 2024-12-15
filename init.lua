@@ -88,8 +88,7 @@ vim.keymap.set('n', '<S-w>j', '<C-w><C-j>', { desc = 'Move focus to the lower wi
 vim.keymap.set('n', '<S-w>k', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- NeoTree
--- vim.api.nvim_set_keymap('n', '<c-t>', ':Neotree<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<c-t>', ':Neotree<CR>', { noremap = true, silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
